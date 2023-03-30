@@ -23,20 +23,21 @@ class MyApp extends StatelessWidget {
 }
 
 // **************************************************************
-// **  cria o widget responsável pela página principal do app  **
+// **  criando a página do app contador de pessoas             **
 // **************************************************************
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // usando widget padrao para criação de páginas - Scaffold()
-    // possui vários parâmetros facilitando a configuração da página
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Olá Flutter!'),  // titulo da página
-        ),
-      drawer: Drawer(),
+    return const Scaffold(
+      body: Column(   // incluindo uma coluna no corpo
+        mainAxisAlignment: MainAxisAlignment.center,  // alinhando o eixo principal (vertical)
+        children: [  // filhos da coluna - 2 textos 1 linha
+          Text('Pode entrar!'),
+          Text('0',)
+        ],
+      )
     );
   }
 }
