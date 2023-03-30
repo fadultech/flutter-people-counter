@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
   // constroi o widget a partir do MaterialApp
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: HomePage(),  // informa a pagina principal do app
+      home: HomePage(), // informa a pagina principal do app
     );
   }
 }
@@ -30,11 +30,13 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // o container não permite uma configuração mais detalhada
-    return Container(
-      color: Colors.indigo,
-      alignment: Alignment.center,
-      child: const Text('Olá Flutter!'),
+    // usando widget padrao para criação de páginas - Scaffold()
+    // possui vários parâmetros facilitando a configuração da página
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Olá Flutter!'),  // titulo da página
+        ),
+      drawer: Drawer(),
     );
   }
 }
