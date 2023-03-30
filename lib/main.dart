@@ -1,4 +1,4 @@
-// app com uma separação melhor dos seus componentes
+// app com uma separação dos seus componentes
 import 'package:flutter/material.dart';
 
 // carrega o app - widget
