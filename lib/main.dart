@@ -30,14 +30,29 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Column(   // incluindo uma coluna no corpo
-        mainAxisAlignment: MainAxisAlignment.center,  // alinhando o eixo principal (vertical)
-        children: [  // filhos da coluna - 2 textos 1 linha
-          Text('Pode entrar!'),
-          Text('0',)
-        ],
-      )
-    );
+    return Scaffold(
+        backgroundColor: Colors.indigo,
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              'Pode entrar!',
+              style: TextStyle(
+                // estilizando o texto
+                fontSize: 30,
+                color: Colors.white,
+                fontWeight: FontWeight.w700,
+              ),
+            ),
+            Text(
+              '0',
+              style: TextStyle(
+                // estilizando o texto
+                fontSize: 100,
+                color: Colors.white,
+            ),
+            )
+          ],
+        ));
   }
 }
