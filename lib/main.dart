@@ -1,4 +1,6 @@
 // app com uma separação dos seus componentes
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 
 // carrega o app - widget
@@ -28,31 +30,97 @@ class MyApp extends StatelessWidget {
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
+  void decrement() {
+    print('Alguem saiu');
+  }
+
+  void increment() {
+    print('Alguem entrou');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.indigo,
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Pode entrar!',
-              style: TextStyle(
-                // estilizando o texto
-                fontSize: 30,
-                color: Colors.white,
-                fontWeight: FontWeight.w700,
+      backgroundColor: Colors.indigo,
+      body: Column(
+        // extendendo a coluna na vertical
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            'Pode entrar!',
+            // estilizando o texto
+            style: TextStyle(
+              fontSize: 30,
+              color: Colors.white,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+          // widget invisivel - altura
+          // outra forma - inserir texto no Padding
+          SizedBox(height: 32),
+          Text(
+            '0',
+            style: TextStyle(
+              fontSize: 100,
+              color: Colors.white,
+            ),
+          ),
+          // widget invisivel - altura
+          SizedBox(height: 32),
+          Row(
+            // extendendo a linha na horizontal
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextButton(
+                // chamando a função
+                onPressed: decrement,
+                // estilizando o botão
+                style: TextButton.styleFrom(
+                  // cor do botão
+                    backgroundColor: Colors.white,
+                    // dimensões
+                    // padding: EdgeInsets.all(32),
+                    // outra forma:
+                    fixedSize: const Size(100, 100),
+                    // efeito degradê
+                    primary: Colors.black,
+                    // borda do botão
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(24),
+                    )),
+                child: Text(
+                  'Saiu',
+                  // estilizando o texto
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                  ),
+                ),
               ),
-            ),
-            Text(
-              '0',
-              style: TextStyle(
-                // estilizando o texto
-                fontSize: 100,
-                color: Colors.white,
-            ),
-            )
-          ],
-        ));
+              // widget invisivel - largura
+              SizedBox(width: 32),
+              TextButton(
+                onPressed: increment,
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.white,
+                  fixedSize: const Size(100, 100),
+                  primary: Colors.black,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(24),
+                  ),
+                ),
+                child: Text(
+                  'Entrou',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+    );
   }
 }
