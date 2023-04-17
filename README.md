@@ -1,2 +1,2 @@
-# flutter_contador_pessoas
- Aplicativo em Flutter para contagem da entrada e saída de pessoas em um ambiente.
+# flutter-people-counter
+ Flutter application for counting the entry and exit of people in an environment.
